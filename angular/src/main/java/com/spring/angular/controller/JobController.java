@@ -1,8 +1,7 @@
 package com.spring.angular.controller;
 
-import com.spring.angular.model.ntt_def_job;
+import com.spring.angular.model.Jobs;
 import com.spring.angular.repository.IJobRepository;
-import com.spring.angular.repository.IPositionsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +20,7 @@ public class JobController {
 
 
     @GetMapping("/job")
-    public List<ntt_def_job> usersList()
+    public List<Jobs> usersList()
     {
         return  jobRepository.findAll();
 

@@ -1,8 +1,8 @@
 package com.spring.angular.controller;
 
 
+import com.spring.angular.model.City;
 import com.spring.angular.repository.ICityRepository;
-import com.spring.angular.model.ntt_dat_city;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +20,7 @@ public class CityController {
 
 
     @GetMapping("/city")
-    public List<ntt_dat_city> usersList()
+    public List<City> cityList()
     {
         return  cityRepository.findAll();
 

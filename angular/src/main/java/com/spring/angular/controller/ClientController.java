@@ -1,7 +1,7 @@
 package com.spring.angular.controller;
 
 
-import com.spring.angular.model.ntt_dat_clients;
+import com.spring.angular.model.Clients;
 import com.spring.angular.repository.IClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,7 +20,7 @@ public class ClientController {
     private IClientRepository clientRepository;
 
     @GetMapping("/all")
-    public List<ntt_dat_clients> usersList()
+    public List<Clients> usersList()
     {
         return  clientRepository.findAll();
 

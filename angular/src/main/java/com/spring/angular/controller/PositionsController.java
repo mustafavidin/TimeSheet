@@ -1,8 +1,7 @@
 package com.spring.angular.controller;
 
 
-import com.spring.angular.model.ntt_def_positions;
-import com.spring.angular.repository.ICityRepository;
+import com.spring.angular.model.Positions;
 import com.spring.angular.repository.IPositionsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,7 +20,7 @@ public class PositionsController {
 
 
     @GetMapping("/positions")
-    public List<ntt_def_positions> usersList()
+    public List<Positions> usersList()
     {
         return  positionsRepository.findAll();
 
