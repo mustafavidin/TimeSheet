@@ -4,7 +4,6 @@ package com.spring.angular.model;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -31,14 +30,10 @@ public class Projects {
     private String clientName;
 
     @Column(name = "actual_man_day")
-    private int actualManDay;
-
-    @Column(name = "date_created")
-    @UpdateTimestamp
-    private Date dateCreated;
+    private Integer actualManDay;
 
     @Column(name = "project_code")
-    private int projectCode;
+    private Integer projectCode;
 
     @Column(name = "opp_id")
     private String oppId;
@@ -59,10 +54,10 @@ public class Projects {
     private Date endDate;
 
     @Column(name = "tcv")
-    private int tcv;
+    private Integer tcv;
 
     @Column(name = "margin")
-    private int margin;
+    private Integer margin;
 
     @Column(name = "blended_rate")
     private String blendedRate;
