@@ -37,4 +37,34 @@ public class Projects {
     @UpdateTimestamp
     private Date dateCreated;
 
+    @Column(name = "project_code")
+    private int projectCode;
+
+    @Column(name = "opp_id")
+    private String oppId;
+
+    @Column(name = "project_type")
+    private String projectType;
+
+    @Column(name = "pricing_model")
+    private String pricingModel;
+
+    @Column(name = "project_manager")
+    private String projectManager;
+
+    @Column(name = "start_date")
+    private Date startDate;
+
+    @Column(name = "end_date")
+    private Date endDate;
+
+    @Column(name = "tcv")
+    private int tcv;
+
+    @Column(name = "margin")
+    private int margin;
+
+    @Column(name = "blended_rate")
+    private String blendedRate;
+
 }
