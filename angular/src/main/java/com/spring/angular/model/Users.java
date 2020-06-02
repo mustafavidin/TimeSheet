@@ -41,7 +41,7 @@ public class Users {
     private String jobTitle;
 
     @Column(name = "role_id")
-    private long roleId;
+    private String roleId;
 
     @Column(name = "start_date")
     @UpdateTimestamp
@@ -81,4 +81,5 @@ public class Users {
 
     @Column(name = "enabled")
     private long enabled;
+
 }
