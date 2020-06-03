@@ -22,5 +22,5 @@ public class UserProjects {
     private String userId;
 
     @Column(name = "project_code")
-    private Integer value;
+    private Integer projectCode;
 }
