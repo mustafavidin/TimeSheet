@@ -3,14 +3,15 @@ package com.spring.angular.controller;
 import com.spring.angular.model.UserProjects;
 import com.spring.angular.repository.IUserProjectsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin(origins = "*",maxAge = 3600)
 @RestController
 @RequestMapping({"/api"})
+@Transactional
 public class UserProjectsController {
 
     @Autowired
@@ -29,20 +30,20 @@ public class UserProjectsController {
         return userProjectsRepository.save(userProjects);
     }
 
-    @DeleteMapping(path = {"/user-projects/{id}"})
-    public Optional<UserProjects> deleteUserProject(@PathVariable("id")int id)
+    @DeleteMapping(path = {"/user-projects/{projectCode}"})
+    public List<UserProjects> deleteUserProject(@PathVariable("projectCode")int projectCode)
     {
-        Optional<UserProjects> userProject = GetUserProjectById(id);
+        List<UserProjects> userProject = GetUserProjectByProjectCode(projectCode);
         if (userProject != null) {
-            userProjectsRepository.deleteById(id);
-        }
+        userProjectsRepository.removeByProjectCode(projectCode);
+    }
         return userProject;
     }
 
-    @GetMapping(value ="/user-projects/{id}")
-    public Optional<UserProjects> GetUserProjectById(@PathVariable("id") int id)
+    @GetMapping(value ="/user-projects/{projectCode}")
+    public List<UserProjects> GetUserProjectByProjectCode(@PathVariable("projectCode") int projectCode)
     {
-        return userProjectsRepository.findById(id);
+        return userProjectsRepository.findByProjectCode(projectCode);
     }
 
 }
